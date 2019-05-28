@@ -43,13 +43,13 @@ void setupHttpdEeprom(void) {
  */
 void setupHttpd(void) {
   
-  // http://192.168.5.1 アクセス時に setupHttpdRoot() を実行
+  // http://192.168.6.1 アクセス時に setupHttpdRoot() を実行
   server.on("/", setupHttpdRoot);
 
-  // http://192.168.5.1/index.html アクセス時に setupHttpdRoot() を実行
+  // http://192.168.6.1/index.html アクセス時に setupHttpdRoot() を実行
   server.on("/index.html", setupHttpdRoot);
 
-  // http://192.168.5.1/eeprom アクセス時にsetupHttpdEeprom() を実行
+  // http://192.168.6.1/eeprom アクセス時にsetupHttpdEeprom() を実行
   server.on("/eeprom", setupHttpdEeprom);
 
   // 上記以外アクセス時に handleConfirmFile() を実行
