@@ -132,6 +132,9 @@ void handleFileRead(String path) {
     // ファイルを読み込む
     File file = SPIFFS.open(path, "r");
 
+    // no-cache設定
+    server.sendHeader("Cache-Control", "no-cache");
+
     // 読み込んだファイルをブラウザ側に返す
     size_t sent = server.streamFile(file, contentType);
 
